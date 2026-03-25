@@ -24,7 +24,8 @@ python -m http.server 8000
 
 ### No Installation Version
 
-Simply open `linguaforge.html` in any modern browser - no dependencies required!
+Simply open `linguaforge.html` in any modern browser.
+**Tip:** If you encounter security errors or "Unsafe attempt" warnings, please use the **Local Server** method described above to satisfy browser security policies.
 
 ---
 

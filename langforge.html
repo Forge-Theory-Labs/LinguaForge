@@ -1226,10 +1226,15 @@
                 const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
+                a.style.display = 'none';
                 a.href = url;
                 a.download = `linguaforge-gen${this.generation}.json`;
+                document.body.appendChild(a);
                 a.click();
-                
+                document.body.removeChild(a);
+
+                // Clean up the URL object to free up memory
+                setTimeout(() => URL.revokeObjectURL(url), 100);
                 this.logEvent('Data exported successfully', 'success');
             }
         }
